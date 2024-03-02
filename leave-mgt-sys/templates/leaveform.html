@@ -1,0 +1,12 @@
+{% include "base.html" %}
+<h2>Leave Form</h2>
+{% if error_message %}
+  {{error_message}}
+{% endif %}
+<form action="{% url 'submitformL' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+  {% if not error_message %}
+    <input type="submit" value="Submit">
+  {% endif %}
+</form>

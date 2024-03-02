@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block employee_content %}
+            <main>
+                <div class="content1">
+                    <h1 style="text-align: center;">Employees Information</h1>
+                    <section class="header">
+                        <input type="number" placeholder="total entries">
+                        <button  id="Btn"  style="background-color: rgba(11, 151, 151, 0.712); border-radius: 5px; box-shadow: 2px 2px 2px grey; border: none; padding: 5px 10px; font-weight: bold; color: white;"><a href="{% url 'employee_form' %}">Add New Employee</a></button>
+                        <input type="search" placeholder="search department here">
+                    </section>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Name</th>
+                          <th>E_ID</th>
+                          <th>Department</th>
+                          <th>Joining Date</th>
+                          <th>Status</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for employee in employees %}
+                        <tr>
+                          <td>{{ forloop.counter }}</td>
+                          <td>{{ employee.name }}</td>
+                          <td>{{ employee.employee_id }}</td>
+                          <td>{{ employee.department_id }}</td>
+                          <td>{{ employee.joining_date }}</td>
+                          <td>{{ employee.status }}</td>
+                          <td>
+                            <button type="button" style="background-color: green; border: none; color: white;padding: 2px 6px;"><a href="{% url 'edit_employee' employee.employee_id %}">Edit</a></button>
+                            <button type="button" style="background-color: red; border: none; color: white;padding: 2px 6px;"><a href="{% url 'delete_employee' employee.employee_id %}">Delete</a></button>
+                          </td>
+                        </tr>
+                        {% endfor %}
+                        <!-- More rows can be added dynamically -->
+                      </tbody>
+                    </table>
+                  </div>
+            </main>
+        </div>
+    </div>
+
+{% endblock employee_content %}

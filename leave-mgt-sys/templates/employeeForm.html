@@ -1,0 +1,27 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/style.css">
+<title>Employee Form</title>
+</head>
+<body> {% endcomment %}
+{% include "base.html" %}
+<h2>Employee Form</h2>
+
+{% if error_message %}
+      {{ error_message }}
+{% endif %}
+
+<form action="{% url 'submitform' %}" method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    {% if not error_message %}
+      <input type="submit" value="Submit">
+    {% endif %}
+</form>
+
+{% comment %} </body>
+</html> {% endcomment %}

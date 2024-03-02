@@ -1,0 +1,46 @@
+{% extends "base.html" %}            
+{% block leave_content %}
+          
+            <main>
+                <div class="content1">
+                    <h1 style="text-align: center;">Leaves Information</h1>
+                    <section class="header">
+                        <input type="number" placeholder="total entries">
+                        <button  id="Btn"  style="background-color: rgba(11, 151, 151, 0.712); border-radius: 5px; box-shadow: 2px 2px 2px grey; border: none; padding: 5px 10px;font-weight: bold; color: white;"><a href="{% url 'leave_form' %}">Add New Leave Type</a></button>
+                        <input type="search" placeholder="search department here">
+                    </section>
+                    <table class="table">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>E_ID</th>
+                            <th>Name</th>
+                            <th>Leave Type</th>
+                            <th>Applied on</th>
+                            <th>Current Status</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                      <tbody>
+                        {% for application in applications %}
+                        <tr>
+                          <td>{{ forloop.counter }}</td>
+                          <td>{{ application.employee_id}}</td>
+                          <td>Dummy</td>
+                          <td>{{ application.leave }}</td>
+                          <td>{{ application.date }}</td>
+                          <td>{{ application.status }}</td>
+                          <td>
+                            <button type="button" style="background-color: green; border: none; color: white;padding: 2px 6px;"><a href="{% url 'approve' application.employee_id %}">Approve</a></button>
+                            <button type="button" style="background-color: red; border: none; color: white;padding: 2px 6px;"><a href="{% url 'decline' application.employee_id %}">Decline</a></button>
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+            </main>
+        </div>
+    </div>
+{% endblock leave_content %}  

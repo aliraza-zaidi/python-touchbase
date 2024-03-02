@@ -1,0 +1,19 @@
+{% extends "basev2.html" %}
+{% block admin %}
+<hr>
+<div class="login-container">
+  <h2>Admin Login</h2>
+  {% if error %}
+      {{error}}
+  {% endif %}
+  <form action="{% url 'a_login' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="checkbox" id="remember_me" name="remember_me">
+    <label for="remember_me">Remember Me</label>
+    <button type="submit">Login</button>
+  </form>
+  <a href="{% url 'e_login' %}">Go to Employee Login</a>
+</div>
+{% endblock admin %}

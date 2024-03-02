@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h4 style="text-align: center;"> Leave Management</h4>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'employee' %}">Employee Section</a></li>
+                <li><a href="{% url 'department' %}">Department Section</a></li>
+                <li><a href="{% url 'leave' %}">Leave Section</a></li>
+                <li><a href="{% url 'admins' %}">Admin</a></li>
+            </ul>
+        </div>
+        <div class="rightbar">
+            <header>
+                <button id="sidebarToggle"></button>
+                <img src="/static/img.jpeg" alt="" width="50px 50px">
+                <h1>Leave Management System</h1>
+                <nav>
+                    <select name="Data" id="Data" style="background-color:  rgba(35, 91, 194, 0.788); border: none; color: whitesmoke; font-size: large; padding: 5px 5px; border-radius: 5px ; margin: 20px 0px;">
+                        <option value="Profile">Profile</option>
+                        <option value="Logout"><button>Logout</button></option>
+                    </select>
+                </nav>
+            </header>
+
+            {% block dashboard_content %}{% endblock dashboard_content %}
+            {% block employee_content %}{% endblock employee_content %}
+            {% block department_content %}{% endblock department_content %}
+            {% block leave_content %}{% endblock leave_content %}
+            {% block admin_content %}{% endblock admin_content %}
+            
+            
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/index.js"></script>
+</body>
+</html>

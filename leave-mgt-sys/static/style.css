@@ -1,0 +1,199 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    /* background-color: rgba(35, 91, 194, 0.788); */
+    background-color: rgb(44, 44, 44);
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.collapsed .sidebar {
+    width: 0;
+    background-color:black;
+    text-wrap: wrap;
+    color: rgba(35, 91, 194, 0.2);
+}
+
+li {
+    margin: 20px;
+    /* background-color: rgba(35, 91, 194, 0.788);
+    text-align: center; */
+    padding: 5px;
+    /* border-radius: 50px; */
+}
+
+li:hover {
+    background-color: rgba(35, 91, 194, 0.788);
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+}
+
+.rightbar {
+    width: 80%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(35, 91, 194, 0.4);
+    flex-wrap: wrap;
+}
+
+header button{
+    /* background-color: rgba(35, 91, 194, 0.788) ; */
+    background-color: rgb(44, 44, 44);
+    border: none;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 0px 20px 20px 0px;
+}
+
+header button:hover{
+    font-size: xx-large;
+}
+.container {
+    display: flex;
+    background-color: rgba(35, 91, 194, 0.2);;
+}
+
+.container.collapsed .rightbar {
+    width: 100%;
+}
+
+.container.collapsed .rightbar main .content div {
+    margin: 30px 10px;
+}
+
+/* .container .rightbar main {
+    background-color: rgba(35, 91, 194, 0.2);
+} */
+
+.container .rightbar main .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container .rightbar main .content div {
+    background-color: rgba(35, 91, 194, 0.4);
+    width: auto;
+    margin: 10px 10px;
+    box-shadow: 2px 2px 2px rgb(63, 63, 63);
+    border-radius: 20px 20px 20px 20px;
+}
+
+.container .rightbar main .content div #sect1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(35, 91, 194, 0.788);
+    color: white;
+    padding: 0px 10px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.container .rightbar main .content div #sect2{
+    display: flex;
+    justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+    font-size: x-large;
+    font-weight: bolder;
+    font-style: italic;
+    padding: 0px 20px;
+}
+.container .rightbar main .content div #sect2 h3{
+    font-size: medium;
+}
+.container .rightbar main .content1 .table{
+    /* background-color: bisque; */
+    text-align: center;
+    width: 100%;
+}
+.container .rightbar main .content1 .table tr:hover{
+    background-color: rgba(240, 255, 255, 0.829);
+}
+.container .rightbar main .content1 .table th{
+    background-color: rgba(41, 41, 41, 0.616);
+    padding: 5px 5px;
+    color: white;
+}
+.container .rightbar main .content1 .header{
+    display: flex;
+    margin: 10px 0px;
+    justify-content: space-around;
+    align-items: center;
+}
+.container .rightbar main .content1 .header input{
+    /* width: 100px; */
+    height: 20px;
+    border: 0.5px grey;
+    box-shadow: 2px 2px 2px grey;
+}
+
+/* CSS code to beautify the Employee Form */
+
+/* Body and font styles */
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Form container */
+.form {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form input fields */
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input[type="text"],
+.input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.input[type="submit"]:hover {
+    background-color: #0056b3;
+}

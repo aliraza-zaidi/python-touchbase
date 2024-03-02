@@ -1,0 +1,25 @@
+{% include "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/style.css">
+<title>Department Form</title>
+</head>
+<body>
+<h2>Department Form</h2>
+{% if error_message %}
+      {{ error_message }}
+{% endif %}
+<form action="{% url 'submitformD' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+  {% if not error_message %}
+    <input type="submit" value="Submit">
+  {% endif %}
+  
+</form>
+
+</body>
+</html>
